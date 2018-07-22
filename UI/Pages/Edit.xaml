@@ -1,0 +1,370 @@
+﻿<Page x:Class="UI.Pages.Edit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:formatters="clr-namespace:UI.Formatters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Edit">
+
+    <Grid Margin="25,10,25,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontFamily="{StaticResource RegularFont}" 
+                       VerticalAlignment="Center" 
+                       FontWeight="Regular" 
+                       FontSize="22">
+                ПРОВЕРКА
+            </TextBlock>
+            <Grid Column="1" Margin="0,5,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource IconBtn}"  Grid.Column="0">&#xE74E;</Button>
+                <Button Style="{StaticResource IconBtn}" Grid.Column="1">&#xE74D;</Button>
+                <Button Style="{StaticResource IconBtn}" Grid.Column="2">&#xE712;</Button>
+            </Grid>
+        </Grid>
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition MaxWidth="300"/>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0" Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" Margin="0,5,0,0">Регулярное выражение</TextBlock>
+                <xctk:RichTextBox Text="{Binding RegExp, Mode=TwoWay,Delay=300, UpdateSourceTrigger=PropertyChanged}" 
+                                  Grid.Row="0" Style="{StaticResource BaseRichTextBoxStyle}" 
+                                  Height="35" Margin="0,0,0,5" 
+                                  AcceptsReturn="False" VerticalAlignment="Bottom">
+                    <xctk:RichTextBox.TextFormatter>
+                        <xctk:XamlFormatter />
+                    </xctk:RichTextBox.TextFormatter>
+                </xctk:RichTextBox>
+                <TextBlock Grid.Row="1" FontSize="15" Margin="0,5,0,0">Проверяемый текст</TextBlock>
+                <xctk:RichTextBox Grid.Row="1" Style="{StaticResource BaseRichTextBoxStyle}" 
+                                  Margin="0,35,0,5" VerticalScrollBarVisibility="Auto"
+                                  Text="{Binding MainText, Mode=TwoWay, 
+                                  Delay=5000, UpdateSourceTrigger=PropertyChanged}">
+                    <xctk:RichTextBox.TextFormatter>
+                        <formatters:CustomFormatter />
+                    </xctk:RichTextBox.TextFormatter>
+                </xctk:RichTextBox>
+                <TextBlock Grid.Row="2" FontSize="15" Margin="0,5,0,0"
+                           FontFamily="/UI;component/Style/Fonts/#Segoe UI">
+                    Текст замены
+                </TextBlock>
+                <xctk:RichTextBox Grid.Row="2" Style="{StaticResource BaseRichTextBoxStyle}"
+                                  Height="35" Margin="0,0,0,5" AcceptsReturn="False"
+                                  VerticalAlignment="Bottom">
+                    <xctk:RichTextBox.TextFormatter>
+                        <xctk:XamlFormatter />
+                    </xctk:RichTextBox.TextFormatter>
+                </xctk:RichTextBox>
+            </Grid>
+            <StackPanel Grid.Column="1" Margin="0,30,0,0">
+                <Expander Margin="0,0,0,10" Header="Тест1">
+                    <StackPanel CanVerticallyScroll="True">
+                        <RichTextBox Style="{StaticResource BaseRichTextBoxStyle}" MaxHeight="200" Margin="0 5 0 5" AcceptsReturn="False" VerticalScrollBarVisibility="Visible" >
+                            <FlowDocument>
+                                <Paragraph Foreground="Red">
+                                    <Run Text="{Binding RegExp, UpdateSourceTrigger=PropertyChanged}"></Run>
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </StackPanel>
+                </Expander>
+                <Expander Margin="0,0,0,10" Header="Тест2">
+                    <StackPanel>
+                        <RichTextBox Style="{StaticResource BaseRichTextBoxStyle}" Margin="0 5 0 5" AcceptsReturn="False">
+                            <FlowDocument>
+                                <Paragraph Foreground="Red">
+                                    <Run Text="{Binding MatchesCount, Mode=OneWay}"></Run>
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </StackPanel>
+                </Expander>
+                <Expander Margin="0,0,0,10" Header="Тест3">
+                    <StackPanel>
+                        <RichTextBox Style="{StaticResource BaseRichTextBoxStyle}" Margin="0 5 0 5" AcceptsReturn="False">
+                            <FlowDocument>
+                                <Paragraph Foreground="Red">123123</Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

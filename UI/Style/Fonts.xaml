@@ -1,0 +1,8 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="RegularFont">/UI;component/Style/Fonts/#Segoe UI</FontFamily>
+    <FontFamily x:Key="Assets">/UI;component/Style/Fonts/segmdl2.ttf#Segoe MDL2 Assets</FontFamily>
+
+</ResourceDictionary>
